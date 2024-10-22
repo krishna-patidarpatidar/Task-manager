@@ -32,6 +32,8 @@ const HomePage: React.FC = () => {
 
     }, []);
 
+
+
     // Save list and confirmedList to localStorage when they change
     useEffect(() => {
         localStorage.setItem('LIST', JSON.stringify(list));
@@ -98,13 +100,11 @@ const HomePage: React.FC = () => {
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                     placeholder="Enter your task"
-                    className="w-full sm:w-1/2 p-2 border rounded"
                 />
                 <ATMButtonField
                     label="Add Task"
                     onClick={addList}
-                    className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded"
-                />
+                    variant='success' />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -122,13 +122,12 @@ const HomePage: React.FC = () => {
                                     <ATMButtonField
                                         onClick={() => confirm(item.id)}
                                         label={<TiInputChecked />}
-                                        className="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded"
+                                        variant='primary'
                                     />
                                     <ATMButtonField
                                         onClick={() => del(item.id)}
                                         label={<MdDeleteForever />}
-                                        className="bg-red-500 hover:bg-red-600 text-white p-2 rounded"
-                                    />
+                                        variant='danger' />
                                 </div>
                             </li>
                         ))}
