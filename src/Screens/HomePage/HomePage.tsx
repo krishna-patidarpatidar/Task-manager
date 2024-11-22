@@ -12,6 +12,7 @@ type Task = {
 };
 
 
+
 const HomePage: React.FC = () => {
     const [list, setList] = useState<Task[]>([]);
     const [inputValue, setInputValue] = useState('');
@@ -100,11 +101,14 @@ const HomePage: React.FC = () => {
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                     placeholder="Enter your task"
+                    inputSize='lg'
                 />
                 <ATMButtonField
                     label="Add Task"
                     onClick={addList}
-                    variant='success' />
+                    variant='success'
+                    size='lg' />
+                    
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
